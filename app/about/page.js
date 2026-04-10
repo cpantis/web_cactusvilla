@@ -1,39 +1,32 @@
-import PageIntro from "../../components/PageIntro";
-import Image from "next/image";
+import Image from 'next/image';
+
+export const metadata = { title: 'About | Cactus Villa' };
 
 export default function AboutPage() {
   return (
-    <main>
-      <PageIntro
-        eyebrow="About Cactus Villa"
-        title="A boutique home for comfort, dignity, and personal care."
-        text="Cactus Villa is designed to feel calm, elegant, and welcoming — more like home, less like an institution."
-      />
-
-      <section className="shell two-col">
-        <div>
-          <h2>What families value most</h2>
-          <p>
-            Families want clarity, responsiveness, and reassurance. At Cactus Villa, they
-            know who to call. Anette is the visible point of contact for tours, questions,
-            and next steps.
-          </p>
-          <p>
-            Our goal is simple: provide attentive support in a home-like Scottsdale setting
-            where residents feel safe, respected, and genuinely cared for.
-          </p>
-        </div>
-
-        <div className="soft-card">
-          <Image
-            src="/anette.jpg"
-            alt="Anette Giurgiu"
-            width={720}
-            height={860}
-            className="portrait"
-          />
-        </div>
-      </section>
+    <main className="section container twoCol aboutPage">
+      <div>
+        <p className="eyebrow">About Cactus Villa</p>
+        <h1>A home centered on comfort, dignity, and personal connection.</h1>
+        <p className="lead">
+          Cactus Villa is designed for families who want quality care in a more
+          intimate, home-like setting. We believe the experience should feel warm,
+          calm, and personal from the very first conversation.
+        </p>
+        <p>
+          Families want to speak with a real person. At Cactus Villa, Anette is the
+          visible point of contact for tours, questions, and next steps. That direct
+          connection matters when you are making an important decision for someone you love.
+        </p>
+        <p>
+          Located in Scottsdale, Arizona, Cactus Villa combines residential comfort,
+          attentive support, and a setting that feels elevated without ever losing the
+          sense of home.
+        </p>
+      </div>
+      <div className="portraitWrap">
+        <Image src="/anette-portrait.png" alt="Anette Giurgiu" width={640} height={900} className="portrait" />
+      </div>
     </main>
   );
 }
