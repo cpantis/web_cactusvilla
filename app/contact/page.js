@@ -1,41 +1,40 @@
-export const metadata = { title: 'Contact | Cactus Villa' };
+
+import InquiryForm from '@/components/InquiryForm'
+
+export const metadata = {
+  title: 'Contact',
+  description: 'Contact Cactus Villa in Scottsdale, Arizona. Speak directly with Anette for tours, questions, and next steps.',
+}
 
 export default function ContactPage() {
   return (
-    <main className="section container contactPage">
-      <div>
-        <p className="eyebrow">Contact</p>
-        <h1>Connect directly with Anette.</h1>
-        <p className="lead">
-          Families often want a direct conversation. At Cactus Villa, Anette is available
-          for tours, questions, and next steps.
-        </p>
-        <div className="contactCard">
-          <strong>Anette Giurgiu</strong>
-          <span>Phone: <a href="tel:7047265938">(704) 726-5938</a></span>
-          <span>Email: <a href="mailto:anettegiurgiu@gmail.com">anettegiurgiu@gmail.com</a></span>
-          <span>Address: 7366 E. Paradise Drive, Scottsdale, AZ 85260</span>
+    <main>
+      <section className="page-hero">
+        <div className="container">
+          <p className="eyebrow">Contact</p>
+          <h1>Speak directly with Anette.</h1>
+          <p className="lead">Families want a real person. At Cactus Villa, Anette is your visible point of contact for tours, questions, and next steps.</p>
         </div>
-      </div>
-      <form className="formCard">
-        <label>
-          Name
-          <input type="text" placeholder="Your name" />
-        </label>
-        <label>
-          Phone
-          <input type="tel" placeholder="Your phone number" />
-        </label>
-        <label>
-          Email
-          <input type="email" placeholder="Your email" />
-        </label>
-        <label>
-          Message
-          <textarea rows="6" placeholder="Tell us how Anette can help" />
-        </label>
-        <a className="button gold" href="mailto:anettegiurgiu@gmail.com?subject=Cactus%20Villa%20Tour%20Inquiry">Email This Inquiry</a>
-      </form>
+      </section>
+
+      <section className="section">
+        <div className="container contact-grid">
+          <div className="contact-card card">
+            <h3>Contact information</h3>
+            <div className="contact-list">
+              <div><strong>Anette Giurgiu</strong></div>
+              <div><a href="tel:7047265938">(704) 726-5938</a></div>
+              <div><a href="mailto:anettegiurgiu@gmail.com">anettegiurgiu@gmail.com</a></div>
+              <div>7366 E. Paradise Drive<br />Scottsdale, AZ 85260</div>
+            </div>
+            <div className="notice" style={{marginTop:18}}>
+              For the fastest response, please call Anette directly.
+            </div>
+          </div>
+
+          <InquiryForm />
+        </div>
+      </section>
     </main>
-  );
+  )
 }

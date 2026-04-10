@@ -1,28 +1,28 @@
-import Image from 'next/image';
-import Link from 'next/link';
 
-const links = [
-  ['Home', '/'],
-  ['About', '/about'],
-  ['Services', '/services'],
-  ['Gallery', '/gallery'],
-  ['Contact', '/contact'],
-];
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function SiteHeader() {
   return (
-    <header className="siteHeader">
-      <div className="container navWrap">
-        <Link href="/" className="brand">
-          <Image src="/logo-cactus-villa.jpeg" alt="Cactus Villa logo" width={180} height={180} className="navLogo" />
+    <header className="site-header">
+      <div className="container site-header__inner">
+        <Link href="/" className="brand" aria-label="Cactus Villa home">
+          <Image src="/images/logo-cactus-villa.jpeg" alt="Cactus Villa logo" width={88} height={88} />
+          <div>
+            <div className="brand__title">Cactus Villa</div>
+            <div className="brand__sub">Luxury Assisted Living</div>
+          </div>
         </Link>
-        <nav className="navLinks">
-          {links.map(([label, href]) => (
-            <Link href={href} key={href}>{label}</Link>
-          ))}
+
+        <nav className="nav">
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/gallery">Gallery</Link>
+          <Link href="/contact">Contact</Link>
+          <a className="btn btn--secondary" href="tel:7047265938">Call Anette</a>
         </nav>
-        <a className="headerCta" href="tel:7047265938">Call Anette</a>
       </div>
     </header>
-  );
+  )
 }

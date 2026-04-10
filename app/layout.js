@@ -1,11 +1,18 @@
-import './globals.css';
-import SiteHeader from '@/components/SiteHeader';
-import SiteFooter from '@/components/SiteFooter';
+
+import './globals.css'
+import SiteHeader from '@/components/SiteHeader'
+import SiteFooter from '@/components/SiteFooter'
+import StickyCall from '@/components/StickyCall'
 
 export const metadata = {
-  title: 'Cactus Villa Luxury Assisted Living',
-  description: 'Luxury assisted living in Scottsdale, Arizona. Speak directly with Anette for tours, questions, and next steps.',
-};
+  metadataBase: new URL('https://example.com'),
+  title: {
+    default: 'Cactus Villa Luxury Assisted Living',
+    template: '%s | Cactus Villa',
+  },
+  description: 'Luxury assisted living in Scottsdale, Arizona with a warm, boutique home environment and direct communication with Anette.',
+  keywords: ['Assisted Living Scottsdale AZ', 'Luxury Assisted Living Scottsdale', 'Residential Assisted Living Scottsdale'],
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -14,7 +21,8 @@ export default function RootLayout({ children }) {
         <SiteHeader />
         {children}
         <SiteFooter />
+        <StickyCall />
       </body>
     </html>
-  );
+  )
 }

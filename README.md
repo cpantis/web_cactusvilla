@@ -1,7 +1,9 @@
-# Cactus Villa Final Website
+
+# Cactus Villa Next-Level Website
+
+This project is a clean Next.js 15.5.7 build prepared for Vercel.
 
 ## Run locally
-
 ```bash
 npm install
 npm run build
@@ -9,9 +11,12 @@ npm run dev
 ```
 
 ## Deploy
-Push this project to a new GitHub repository and import it into Vercel.
+1. Create a new GitHub repo
+2. Upload the project files
+3. Import the repo into Vercel
+4. Deploy
 
 ## Notes
-- Built with Next.js 15.5.7 for Vercel compatibility.
-- Do not commit `.next` or `node_modules`.
-- Main contact throughout the site is Anette Giurgiu.
+- The contact form currently validates and accepts submissions in-app, but it does not send email yet.
+- For real email delivery, connect your preferred provider later (for example Resend or Formspree).
+- Images live in `/public/images`.

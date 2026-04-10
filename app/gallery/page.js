@@ -1,28 +1,39 @@
-import Image from 'next/image';
 
-export const metadata = { title: 'Gallery | Cactus Villa' };
+import Image from 'next/image'
 
-const images = [
-  ['Exterior', '/gallery/exterior.png'],
-  ['Living Room', '/gallery/living.png'],
-  ['Bedroom', '/gallery/bedroom.png'],
-  ['Dining Area', '/gallery/dining.png'],
-  ['Patio', '/gallery/patio.png'],
-];
+export const metadata = {
+  title: 'Gallery',
+  description: 'Preview the warm, elegant style of Cactus Villa through curated exterior and interior imagery.',
+}
+
+const items = [
+  ['/images/gallery/exterior-collage.png', 'Exterior and curb appeal'],
+  ['/images/gallery/luxury-collage.png', 'Warm common areas and bright interiors'],
+  ['/images/gallery/daylight-collage.png', 'Clean daylight views and welcoming spaces'],
+  ['/images/gallery/interior-collage.png', 'Interior details and comfortable rooms'],
+]
 
 export default function GalleryPage() {
   return (
-    <main className="section container">
-      <p className="eyebrow">Gallery</p>
-      <h1>Spaces designed to feel calm, bright, and welcoming.</h1>
-      <div className="fullGallery">
-        {images.map(([label, src]) => (
-          <figure className="galleryFigure" key={src}>
-            <Image src={src} alt={label} width={900} height={700} className="galleryPhoto" />
-            <figcaption>{label}</figcaption>
-          </figure>
-        ))}
-      </div>
+    <main>
+      <section className="page-hero">
+        <div className="container">
+          <p className="eyebrow">Gallery</p>
+          <h1>A visual feel for the home.</h1>
+          <p className="lead">A curated look at the style, atmosphere, and warmth Cactus Villa is designed to offer.</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container gallery-grid">
+          {items.map(([src, caption]) => (
+            <figure className="card gallery-item" key={src}>
+              <Image src={src} alt={caption} width={1400} height={1000} />
+              <figcaption className="caption">{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
     </main>
-  );
+  )
 }
