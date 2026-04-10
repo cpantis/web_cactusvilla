@@ -9,35 +9,19 @@ const links = [
   ['Contact', '/contact'],
 ];
 
-export function SiteHeader() {
+export default function SiteHeader() {
   return (
-    <header className="site-header">
-      <div className="container nav-wrap">
+    <header className="siteHeader">
+      <div className="container navWrap">
         <Link href="/" className="brand">
-          <Image
-            src="/logo-cactus-villa.jpeg"
-            alt="Cactus Villa Luxury Assisted Living logo"
-            width={170}
-            height={170}
-            className="brand-logo"
-            priority
-          />
-          <div>
-            <div className="brand-name">Cactus Villa</div>
-            <div className="brand-subtitle">Luxury Assisted Living</div>
-          </div>
+          <Image src="/logo-cactus-villa.jpeg" alt="Cactus Villa logo" width={180} height={180} className="navLogo" />
         </Link>
-
-        <nav className="nav-links">
+        <nav className="navLinks">
           {links.map(([label, href]) => (
-            <Link key={href} href={href}>{label}</Link>
+            <Link href={href} key={href}>{label}</Link>
           ))}
         </nav>
-
-        <a className="call-chip" href="tel:7047265938">
-          Call Anette
-          <span>(704) 726-5938</span>
-        </a>
+        <a className="headerCta" href="tel:7047265938">Call Anette</a>
       </div>
     </header>
   );
