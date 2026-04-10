@@ -1,37 +1,41 @@
-export const metadata = { title: 'Services | Cactus Villa' };
+import PageIntro from "../../components/PageIntro";
 
 const services = [
   {
-    title: 'Assisted Living Support',
-    text: 'Daily support designed around each resident’s needs, routines, and level of independence.'
+    title: "Assisted Living Support",
+    text: "Day-to-day support in a warm residential setting with attention to dignity, comfort, and routine.",
   },
   {
-    title: 'Personalized Attention',
-    text: 'An intimate setting where care can feel more personal, attentive, and relationship-based.'
+    title: "Personalized Communication",
+    text: "Families can speak directly with Anette regarding tours, questions, and care conversations.",
   },
   {
-    title: 'Comfortable Home Environment',
-    text: 'Beautiful shared spaces and private areas that feel calm, residential, and welcoming.'
+    title: "Comfortable Home Environment",
+    text: "A calm Scottsdale home designed to feel elegant, peaceful, and welcoming.",
   },
   {
-    title: 'Tour Guidance with Anette',
-    text: 'Families can speak directly with Anette for questions, tours, and next steps without a confusing handoff.'
-  }
+    title: "Thoughtful Next Steps",
+    text: "We help families understand the process clearly, without pressure and without confusion.",
+  },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="section container">
-      <p className="eyebrow">Services</p>
-      <h1>Thoughtful support in a beautiful, home-like setting.</h1>
-      <div className="serviceGrid">
-        {services.map((item) => (
-          <article className="featureCard" key={item.title}>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
+    <main>
+      <PageIntro
+        eyebrow="Services"
+        title="Personal support in an elegant home setting."
+        text="Cactus Villa is built around comfort, clear communication, and thoughtful day-to-day care."
+      />
+
+      <section className="shell cards-grid">
+        {services.map((service) => (
+          <article key={service.title} className="feature-card">
+            <h2>{service.title}</h2>
+            <p>{service.text}</p>
           </article>
         ))}
-      </div>
+      </section>
     </main>
   );
 }

@@ -1,28 +1,28 @@
-import Image from 'next/image';
-
-export const metadata = { title: 'Gallery | Cactus Villa' };
+import PageIntro from "../../components/PageIntro";
+import Image from "next/image";
 
 const images = [
-  ['Exterior', '/gallery/exterior.png'],
-  ['Living Room', '/gallery/living.png'],
-  ['Bedroom', '/gallery/bedroom.png'],
-  ['Dining Area', '/gallery/dining.png'],
-  ['Patio', '/gallery/patio.png'],
+  { src: "/gallery-home-1.png", alt: "Cactus Villa exterior and interiors" },
+  { src: "/gallery-home-2.png", alt: "Cactus Villa living and dining areas" },
+  { src: "/gallery-home-3.png", alt: "Cactus Villa home collage" },
 ];
 
 export default function GalleryPage() {
   return (
-    <main className="section container">
-      <p className="eyebrow">Gallery</p>
-      <h1>Spaces designed to feel calm, bright, and welcoming.</h1>
-      <div className="fullGallery">
-        {images.map(([label, src]) => (
-          <figure className="galleryFigure" key={src}>
-            <Image src={src} alt={label} width={900} height={700} className="galleryPhoto" />
-            <figcaption>{label}</figcaption>
-          </figure>
+    <main>
+      <PageIntro
+        eyebrow="Gallery"
+        title="A look at the warm, residential style of Cactus Villa."
+        text="These visuals reflect the calm, elegant, home-like feeling families can expect."
+      />
+
+      <section className="shell gallery-grid">
+        {images.map((image) => (
+          <div key={image.src} className="gallery-card">
+            <Image src={image.src} alt={image.alt} width={1200} height={900} />
+          </div>
         ))}
-      </div>
+      </section>
     </main>
   );
 }

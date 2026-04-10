@@ -1,17 +1,11 @@
-# Cactus Villa Final Website
+# Cactus Villa website
 
 ## Run locally
-
-```bash
 npm install
-npm run build
 npm run dev
-```
+
+## Production check
+npm run build
 
 ## Deploy
-Push this project to a new GitHub repository and import it into Vercel.
-
-## Notes
-- Built with Next.js 15.5.7 for Vercel compatibility.
-- Do not commit `.next` or `node_modules`.
-- Main contact throughout the site is Anette Giurgiu.
+Push to GitHub and import the repo into Vercel.
